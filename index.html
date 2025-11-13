@@ -1,67 +1,67 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Accessible Calculator</title>
-<link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accessible Calculator</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-<main class="calculator-root" role="application" aria-label="Calculator">
-<section class="display-area">
-<div id="history" class="history" aria-hidden="true"></div>
-<div id="screen" class="screen" aria-live="polite">0</div>
-</section>
+  <main class="calculator-container" role="application" aria-label="Calculator App">
 
+    <!-- Display Section -->
+    <section class="display-section">
+      <div class="calculation-history" id="history" aria-hidden="true"></div>
+      <div class="display-screen" id="screen" aria-live="polite">0</div>
+    </section>
 
-<section class="keypad" role="group" aria-label="Calculator keys">
-<div class="row">
-<button data-action="all-clear" aria-label="All clear (AC)">AC</button>
-<button data-action="clear" aria-label="Clear entry (C)">C</button>
-<button data-action="backspace" aria-label="Backspace">←</button>
-<button data-operator="/" aria-label="divide">÷</button>
-</div>
+    <!-- Keypad Section -->
+    <section class="keypad-area" role="group" aria-label="Calculator keypad">
 
+      <div class="button-row">
+        <button data-action="all-clear" aria-label="All Clear">AC</button>
+        <button data-action="clear" aria-label="Clear Entry">C</button>
+        <button data-action="backspace" aria-label="Delete Last">←</button>
+        <button data-operator="/" aria-label="Divide">÷</button>
+      </div>
 
-<div class="row">
-<button data-digit="7">7</button>
-<button data-digit="8">8</button>
-<button data-digit="9">9</button>
-<button data-operator="*">×</button>
-</div>
+      <div class="button-row">
+        <button data-digit="7">7</button>
+        <button data-digit="8">8</button>
+        <button data-digit="9">9</button>
+        <button data-operator="*">×</button>
+      </div>
 
+      <div class="button-row">
+        <button data-digit="4">4</button>
+        <button data-digit="5">5</button>
+        <button data-digit="6">6</button>
+        <button data-operator="-">−</button>
+      </div>
 
-<div class="row">
-<button data-digit="4">4</button>
-<button data-digit="5">5</button>
-<button data-digit="6">6</button>
-<button data-operator="-">−</button>
-</div>
+      <div class="button-row">
+        <button data-digit="1">1</button>
+        <button data-digit="2">2</button>
+        <button data-digit="3">3</button>
+        <button data-operator="+">+</button>
+      </div>
 
+      <div class="button-row">
+        <button class="zero-btn" data-digit="0">0</button>
+        <button data-digit=".">.</button>
+        <button data-action="equals" aria-label="Equals">=</button>
+      </div>
 
-<div class="row">
-<button data-digit="1">1</button>
-<button data-digit="2">2</button>
-<button data-digit="3">3</button>
-<button data-operator="+">+</button>
-</div>
+    </section>
 
+    <!-- History Panel -->
+    <aside class="history-panel">
+      <h2>Calculation History</h2>
+      <ol id="history-list" class="history-list" aria-live="polite"></ol>
+    </aside>
 
-<div class="row">
-<button data-digit="0" class="wide">0</button>
-<button data-digit=".">.</button>
-<button data-action="equals" aria-label="equals">=</button>
-</div>
-</section>
+  </main>
 
-
-<aside class="sidepane">
-<h2>History</h2>
-<ol id="history-list" class="history-list" aria-live="polite"></ol>
-</aside>
-</main>
-
-
-<script type="module" src="app.js"></script>
+  <script type="module" src="app.js"></script>
 </body>
 </html>

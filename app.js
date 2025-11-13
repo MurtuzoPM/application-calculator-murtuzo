@@ -50,7 +50,7 @@ case 'backspace': calc.backspace(); break;
 };
 
 
-// keyboard support
+// keyboard supp
 window.addEventListener('keydown', (e) => {
 const key = e.key;
 if (/^[0-9]$/.test(key)) calc.inputDigit(key);
